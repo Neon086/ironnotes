@@ -1,0 +1,161 @@
+/* 🌍 BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+}
+
+/* 🧠 TÍTULOS */
+h1 {
+  text-align: center;
+  color: #22c55e;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 🧾 FORMULARIOS */
+select, input, button {
+  width: 100%;
+  padding: 14px;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+input, select {
+  background: #1e293b;
+  color: white;
+}
+
+/* 🔘 BOTONES */
+button {
+  background: #22c55e;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* 📦 CONTENEDOR */
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* 🧱 TARJETAS */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #22c55e;
+}
+
+/* 📋 LISTA DE EJERCICIOS */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #0f172a;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 🔘 BOTONES DENTRO DEL ITEM */
+li div {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+li button {
+  flex: 1;
+  padding: 10px;
+}
+
+/* 📊 STATS */
+#stats {
+  background: #0f172a;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+#stats p {
+  margin: 5px 0;
+}
+
+/* 📈 GRÁFICA */
+canvas {
+  margin-top: 20px;
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* 💾 BOTÓN BACKUP */
+button[onclick="exportData()"] {
+  margin-top: 20px;
+  background: #3b82f6;
+  color: white;
+}
+
+/* ⚡ HISTORIAL RÁPIDO */
+#quickExercises {
+  margin-top: 15px;
+}
+
+#quickList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#quickList button {
+  width: auto;
+  background: #334155;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+}
+
+#quickList button:hover {
+  background: #475569;
+}
+
+/* 🧱 CAMPOS (MUY IMPORTANTE PARA EVITAR DESORDEN) */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}

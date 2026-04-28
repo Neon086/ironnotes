@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>IronGraph</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <h1>💪 IronGraph</h1>
+
+  <div class="container">
+
+    <div class="card">
+      <h3>➕ Añadir entrenamiento</h3>
+
+      <label>Día:</label>
+      <select id="day">
+        <option>Lunes</option>
+        <option>Martes</option>
+        <option>Miércoles</option>
+        <option>Jueves</option>
+        <option>Viernes</option>
+        <option>Sábado</option>
+        <option>Domingo</option>
+      </select>
+
+      <label>Rutina:</label>
+      <select id="routineSelect">
+        <option value="">Todas</option>
+        <option value="pecho_triceps">Pecho + Tríceps</option>
+        <option value="espalda_biceps_hombro">Espalda + Bíceps + Hombro</option>
+        <option value="hombro">Hombro</option>
+        <option value="pierna">Pierna</option>
+      </select>
+
+      <label>Músculo:</label>
+      <select id="muscle"></select>
+
+      <input id="exercise" placeholder="Ejercicio">
+
+      <select id="exerciseAuto" onchange="selectAutoExercise()">
+        <option value="">Sugerencias</option>
+      </select>
+
+      <input id="reps" type="number" placeholder="Reps">
+      <input id="weight" type="number" placeholder="Peso">
+      <input id="series" type="number" value="1">
+
+      <button onclick="addWorkout()">Añadir</button>
+    </div>
+
+    <div class="card">
+      <h3>Entrenamientos</h3>
+      <ul id="list"></ul>
+    </div>
+
+    <div class="card">
+      <h3>📊 Análisis</h3>
+
+      <select id="exerciseFilter"></select>
+
+      <p>Media: <span id="avgWeight">-</span></p>
+      <p>Total series: <span id="totalWorkouts">-</span></p>
+    </div>
+
+    <div class="card">
+      <h3>📈 Evolución</h3>
+      <canvas id="chart"></canvas>
+    </div>
+
+    <div class="card" style="text-align:center;">
+      <h3>⏱ Descanso</h3>
+
+      <input id="restTime" type="number" value="60" min="5" step="5">
+
+      <div>
+        <button onclick="setRestTime(30)">30s</button>
+        <button onclick="setRestTime(60)">60s</button>
+        <button onclick="setRestTime(90)">90s</button>
+        <button onclick="setRestTime(120)">120s</button>
+      </div>
+
+      <h2 id="timerDisplay">00:00</h2>
+
+      <button onclick="startTimer()">▶️</button>
+      <button onclick="resetTimer()">⏹</button>
+    </div>
+
+    <!-- 🔥 ESTO TE FALTABA -->
+    <div class="card">
+      <h3>💾 Backup</h3>
+
+      <button onclick="exportData()">Exportar datos</button>
+      <input type="file" accept=".json" onchange="importData(event)">
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
